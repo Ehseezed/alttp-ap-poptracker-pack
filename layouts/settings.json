@@ -24,18 +24,22 @@
                                 "rows": [                        
                                     [
                                         "gt_access", //gt crystal  count
+                                        "er_mode",
                                         "small_keys"
                                     ],
                                     [
-                                        "ganon_killable", //ganon crystal count
+                                        "ganon_killable",  //ganon crystal count
+                                        "",  //added a space to keep all the keysanity options in line
                                         "big_keys"
                                     ],
                                     [
                                         "triforce_pieces_needed",
+                                        "enemy_dmg",
                                         "map"
                                     ],
                                     [
                                         "swordless",
+                                        "",
                                         "compass"
                                     ]
                                 ]
