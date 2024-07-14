@@ -60,6 +60,7 @@ sw_north_drop:connect_one_way(sw_gibdo_entrance)
 sw_west_lobby_entrance:connect_one_way("SW - West Lobby Key Drop")
 
 sw_back_entrance:connect_two_ways(sw_back_bridge)
+dungeons_all:connect_two_ways(sw_back_bridge)
 sw_back_entrance:connect_two_ways(sw_back_bottom_hallway)
 
 sw_back_bottom_hallway:connect_one_way("SW - Bridge Chest")

@@ -8,6 +8,7 @@ local at_aga1 = alttp_location.new("at_aga1")
 
 at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("light", 1), openOrStandard()) end)
 at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("dark", 1), inverted()) end)
+dungeons_all:connect_two_ways(at_golden_guards)
 
 at_golden_guards:connect_one_way(at_entrance)
 at_golden_guards:connect_two_ways(at_first_chest, function() return dealDamage() end)

@@ -17,6 +17,7 @@ local dp_back_boss_room = alttp_location.new("dp_back_boss_room")
 
 
 dp_main_entrance:connect_two_ways(dp_main_room, function() return can_interact("light", 1) end)
+dungeons_all:connect_two_ways(dp_main_room)
 dp_main_room:connect_two_ways(dp_big_chest_room)
 dp_big_chest_room:connect_one_way("DP - Big Chest", function() return has("dp_bigkey") end)
 
@@ -36,6 +37,7 @@ dp_big_key_chest_room:connect_one_way("DP - Big Key Chest", function() return de
 dp_main_room:connect_two_ways(dp_right_entrance, function() return can_interact("light", 1) end)
 dp_main_room:connect_two_ways(dp_left_entrance, function() return can_interact("light", 1) end)
 dp_back_entrance:connect_two_ways(dp_back_tile1_room, function() return can_interact("light", 1) end)
+dungeons_all:connect_two_ways(dp_back_tile1_room)
 
 dp_back_tile1_room:connect_one_way(dp_back_beamos_hallway, function(keys) 
     return has("dp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1)

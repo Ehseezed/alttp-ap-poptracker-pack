@@ -32,6 +32,7 @@ local gt_top_aga2 = alttp_location.new("gt_top_aga2")
 
 gt_entrance:connect_two_ways(gt_bottom_main_room, function() return all(can_interact("dark", 1), openOrStandard()) end)
 gt_entrance:connect_two_ways(gt_bottom_main_room, function() return all(can_interact("light", 1), inverted()) end)
+dungeons_all:connect_two_ways(gt_bottom_main_room)
 gt_bottom_main_room:connect_two_ways(gt_bottom_bobs_torch)
 gt_bottom_main_room:connect_two_ways(gt_bottom_hope_room, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_main_room:connect_two_ways(gt_top_entrance)

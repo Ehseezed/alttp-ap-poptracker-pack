@@ -18,6 +18,7 @@ hc_main_entrance:connect_one_way(ce_entrance, function() return can_interact("li
 
 hc_left_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light", 1) end)
 hc_right_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light", 1) end)
+dungeons_all:connect_two_ways(hc_back_hall)
 
 hc_back_hall:connect_two_ways(hc_map_chest_room)
 hc_map_chest_room:connect_one_way("HC - Map Chest")

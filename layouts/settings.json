@@ -24,7 +24,7 @@
                                 "rows": [                        
                                     [
                                         "gt_access", //gt crystal  count
-                                        "er_mode",
+                                        "entrance_rando",
                                         "small_keys"
                                     ],
                                     [
@@ -34,7 +34,7 @@
                                     ],
                                     [
                                         "triforce_pieces_needed",
-                                        "enemy_dmg",
+                                        "",
                                         "map"
                                     ],
                                     [

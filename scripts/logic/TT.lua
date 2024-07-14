@@ -14,6 +14,7 @@ local tt_boss_room = alttp_location.new("tt_boss_room")
 
 
 tt_entrance:connect_two_ways(tt_front_bottom_left)
+dungeons_all:connect_two_ways(tt_front_bottom_left)
 tt_front_bottom_left:connect_two_ways(tt_front_top_left)
 tt_front_bottom_left:connect_one_way("TT - Map Chest", function() return can_interact("dark", 1) end)
 

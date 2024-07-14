@@ -23,6 +23,7 @@ local tr_switch_puzzle = alttp_location.new("tr_switch_puzzle")
 local tr_boss_room = alttp_location.new("tr_boss_room")
 
 tr_main_entrance:connect_two_ways(tr_square_travel_room, function() return has("somaria") end)
+dungeons_all:connect_two_ways(tr_square_travel_room, function() return has("somaria") end)
 tr_square_travel_room:connect_two_ways(tr_compass_room, function() return has("somaria") end)
 tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function() 
     return all(
@@ -70,6 +71,7 @@ tr_big_key_chest_island:connect_one_way("TR - Big Key Chest")
 
 tr_shooter_after_big_key:connect_two_ways(tr_big_key_door_room)
 tr_shooter_after_big_key:connect_two_ways(tr_laser_entrance)
+dungeons_all:connect_two_ways(tr_laser_entrance)
 
 tr_big_chest_entrance:connect_one_way(tr_big_key_door_room, function() 
     return any(
@@ -86,6 +88,15 @@ tr_big_chest_entrance:connect_one_way("TR - Big Chest", function()
             has("hookshot")
         )
     ) 
+end)
+dungeons_all:connect_two_ways("TR - Big Chest", function()
+    return all(
+        has("tr_bigkey"),
+        any(
+            has("somaria"),
+            has("hookshot")
+        )
+    )
 end)
 
 tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return has("tr_bigkey") end)
@@ -108,6 +119,7 @@ tr_travel_maze:connect_two_ways(tr_eye_hallway, function()
 end)
 
 tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance)
+dungeons_all:connect_two_ways(tr_eye_hallway)
 tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 
 tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Right")

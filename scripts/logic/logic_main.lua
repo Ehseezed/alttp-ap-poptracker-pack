@@ -218,65 +218,12 @@ end
 entry_point = alttp_location.new("entry_point")
 lightworld_spawns = alttp_location.new("lightworld_spawns")
 darkworld_spawns = alttp_location.new("darkworld_spawns")
-
-dungeons_light = alttp_location.new("dungeons_light")
-dungeons_dark = alttp_location.new("dungeons_dark")
 dungeons_all = alttp_location.new("dungeons_all")
 
 
 entry_point:connect_one_way(lightworld_spawns, function() return openOrStandard() end)
 entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)
-
-
--- faux ER mode connectors
-entry_point:connect_one_way(dungeons_light, function()
-    return all(
-        openOrStandard(),
-        sameER()
-    )
-end)
-entry_point:connect_one_way(dungeons_dark, function()
-    return all(
-        inverted(),
-        sameER()
-    )
-end)
-entry_point:connect_one_way(dungeons_all, function() return crossedER() end)
-
-dungeons_light:connect_one_way(ep_entrance)
-dungeons_light:connect_one_way(dp_main_entrance)
-dungeons_light:connect_one_way(toh_entrance)
-dungeons_light:connect_one_way(at_entrance)
-dungeons_light:connect_one_way(hc_main_entrance)
-
-dungeons_dark:connect_one_way(pod_entrance)
-dungeons_dark:connect_one_way(sp_entrance)
-dungeons_dark:connect_one_way(tt_entrance)
-dungeons_dark:connect_one_way(skull_woods_back_entrance)
-dungeons_dark:connect_one_way(ip_entrance)
-dungeons_dark:connect_one_way(mm_entrance)
-dungeons_dark:connect_one_way(tr_main_entrance)
-dungeons_dark:connect_one_way(tr_laser_entrance)
-dungeons_dark:connect_one_way(tr_big_chest_entrance)
-dungeons_dark:connect_one_way(tr_eye_bridge_entrance)
-dungeons_dark:connect_one_way(gt_entrance)
-
-dungeons_all:connect_one_way(ep_entrance)
-dungeons_all:connect_one_way(dp_main_entrance)
-dungeons_all:connect_one_way(toh_entrance)
-dungeons_all:connect_one_way(at_entrance)
-dungeons_all:connect_one_way(hc_main_entrance)
-dungeons_all:connect_one_way(pod_entrance)
-dungeons_all:connect_one_way(sp_entrance)
-dungeons_all:connect_one_way(tt_entrance)
-dungeons_all:connect_one_way(skull_woods_back_entrance)
-dungeons_all:connect_one_way(ip_entrance)
-dungeons_all:connect_one_way(mm_entrance)
-dungeons_all:connect_one_way(tr_main_entrance)
-dungeons_all:connect_one_way(tr_laser_entrance)
-dungeons_all:connect_one_way(tr_big_chest_entrance)
-dungeons_all:connect_one_way(tr_eye_bridge_entrance)
-dungeons_all:connect_one_way(gt_entrance)
+entry_point:connect_one_way(dungeons_all, function() return entranceRando() end)
 
 -- 
 function stateChanged()

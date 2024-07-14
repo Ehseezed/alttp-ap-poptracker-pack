@@ -320,6 +320,9 @@ function can_interact(world, glitch_lvl)
         if Tracker:FindObjectForCode("glitches").CurrentStage >= glitch_lvl then
             return true
         end
+        --if Tracker:FindObjectForCode("entrance_rando").Active == true then --todo: check if this is correct (its not)
+        --    return true
+        --end
         return false
     end
     return false
@@ -436,21 +439,8 @@ function bossShuffle()
     end
 end
 
-function crossedER(item)
-    if Tracker:FindObjectForCode("er_mode").CurrentStage == 2 then
-        if item then
-            return Tracker:FindObjectForCode(item).Active
-        end
-        return true
-    end
-    return false
-end
-
-function sameER(item)
-    if Tracker:FindObjectForCode("er_mode").CurrentStage == 1 then
-        if item then
-            return Tracker:FindObjectForCode(item).Active
-        end
+function entranceRando()
+    if Tracker:FindObjectForCode("entrance_rando").Active == true then
         return true
     end
     return false

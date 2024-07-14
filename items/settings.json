@@ -385,23 +385,9 @@
     },
     {
         "name": "Entrance Randomizer",
-        "type": "progressive",
-        "stages": [
-            {
-                "img": "/images/settings/er_same.png",
-                "inherit_codes": false,
-                "name": "ER Same World",
-                "codes": "er_same"
-            },
-            {
-                "img": "/images/settings/er_crossed.png",
-                "inherit_codes": false,
-                "name": "ER Crossed World",
-                "codes": "er_crossed"
-            }
-        ],
-        "img": "/images/settings/er_none",
-        "codes": "er_mode"
+        "type": "toggle",
+        "img": "/images/settings/er_crossed.png",
+        "codes": "entrance_rando"
     },
     {
         "name": "AP item",
